@@ -1,0 +1,75 @@
+/* 영역 별 색상 및 높이 */
+.container {
+  background-color: azure;
+}
+
+.header {
+  background-color: pink;
+  height: 10vh;
+}
+
+.visual {
+  background-color: salmon;
+  height: 10vh;
+}
+
+.main {
+  background-color: green;
+  height: 60vh;
+}
+
+.group1 {
+  background-color: yellow;
+}
+
+.group2 {
+  background-color: aqua;
+}
+
+.group3 {
+  background-color: lime;
+}
+
+.slogan {
+  background-color: blueviolet;
+  height: 10vh;
+}
+
+.footer-wrapper {
+  background-color: silver;
+}
+
+.footer {
+  background-color: gray;
+  height: 10vh;
+}
+
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan,
+.footer {
+  width: 940px;
+  margin-inline: auto;
+}
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  padding-block: 28px 16px;
+  padding-inline: 16px;
+  justify-content: space-between;
+
+  .group1 {
+    width: 250px;
+  }
+
+  .group2 {
+    width: 380px;
+  }
+
+  .group3 {
+    width: 190px;
+  }
+}
