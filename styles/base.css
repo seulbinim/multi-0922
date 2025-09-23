@@ -4,3 +4,10 @@ body {
   background-color: #999;
   color: #121212;
 }
+
+/* 하이퍼 링크 */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
