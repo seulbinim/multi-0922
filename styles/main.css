@@ -103,6 +103,7 @@
   position: relative;
   background-color: #fff;
   border-radius: 0 0 15px 15px;
+  padding: 0 30px;
 }
 
 /* 로고 */
@@ -115,6 +116,24 @@
 
 /* 유틸리티 메뉴 */
 .utility-menu {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 4px 0;
+  gap: 8px;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  left: 8px;
+
+  li {
+    display: contents;
+
+    a {
+      padding: 4px 8px;
+      text-transform: uppercase;
+    }
+  }
 }
 
 /* 내비게이션 */
