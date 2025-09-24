@@ -118,6 +118,7 @@
   position: absolute;
   top: 54px;
   left: 48px;
+  z-index: 10;
 }
 
 /* 유틸리티 메뉴 */
@@ -144,8 +145,7 @@
 
 /* 내비게이션 */
 .navigation {
-  background-color: #ffc;
-  padding-block-end: 100px;
+  padding-block-end: 40px;
 }
 
 /* 메인 메뉴 */
@@ -162,6 +162,7 @@
   flex-flow: row nowrap;
   justify-content: end;
   border-block-start: 2px solid #000;
+  position: relative;
 
   .menu-item {
     border-left: 2px solid #fff;
@@ -178,12 +179,24 @@
   }
 
   .sub-menu {
-    background: pink;
     position: absolute;
     list-style: none;
-    padding-left: 0;
+    padding: 4px 0;
     padding-inline-start: 0;
     display: none;
+    gap: var(--spacing-base);
+
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+
+      &:focus-visible {
+        box-shadow: none;
+      }
+    }
   }
 
   .is-active {
@@ -205,5 +218,16 @@
     .sub-menu {
       display: flex;
     }
+  }
+
+  .menu-button:focus-visible {
+    color: #ccc !important;
+    box-shadow: none;
+  }
+
+  .menu-archive,
+  .menu-qna,
+  .menu-accessibility {
+    right: 0;
   }
 }

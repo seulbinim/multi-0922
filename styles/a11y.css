@@ -1,3 +1,4 @@
+/* 스크린리더 사용자를 위한 숨김 콘텐츠 */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -8,4 +9,14 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* 포커스 제거, focus visible 상태일 때 box-shadow로 스타일링 */
+:focus {
+  outline: 0;
+}
+
+:focus-visible {
+  box-shadow: 0 0 4px 2px var(--primary);
+  border-radius: 4px;
 }
