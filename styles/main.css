@@ -313,3 +313,72 @@
     }
   }
 }
+
+/* 로그인 */
+.login {
+  background: var(--primary) radial-gradient(circle at right top, var(--secondary), var(--primary));
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 0 #aaa;
+  padding: 15px;
+
+  h2 {
+    color: #ff0;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .form-wrapper {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  form {
+    background-color: yellow;
+    position: relative;
+
+    .form-input {
+      margin-bottom: 10px;
+    }
+
+    label {
+      background: pink;
+      display: inline-block;
+      width: 4em;
+    }
+
+    input {
+      width: 90px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 50px;
+      aspect-ratio: 1/1;
+      border: 0;
+      padding: 0;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 5px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    padding-left: 0;
+    justify-content: space-between;
+    border-top: 1px solid #aaa;
+    padding-top: 10px;
+
+    span {
+      color: var(--primary);
+    }
+  }
+}
