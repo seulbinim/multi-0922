@@ -1,8 +1,14 @@
 html,
 body {
   font-family: "Pretendard Variable";
-  background-color: #999;
   color: #121212;
+  /* background-color: #999;
+  background-image: url("./../assets/bg_flower.png"), url("./../assets/coffee.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0%, 50% 150px; */
+  /* background: #999 url("./../assets/bg_flower.png") no-repeat 50% 0%; */
+  background: url("./../assets/bg_flower.png") no-repeat 50% 0%, linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 60%, #fff 100%);
+  background-color: #999;
 }
 
 /* 하이퍼 링크 */
