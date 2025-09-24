@@ -246,6 +246,15 @@
   }
 }
 
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .visual {
   height: 120px;
   position: relative;
@@ -260,6 +269,10 @@
     top: 0;
     left: 0;
     z-index: -1;
+    animation-name: fade;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   &::before {
@@ -272,6 +285,7 @@
     background-image: url("./../assets/ani_flower_03.png"), url("./../assets/ani_flower_04.png");
     background-repeat: no-repeat;
     background-position: 300px 5px, 800px 5px;
+    animation-delay: 1000ms;
   }
 
   p {
@@ -279,6 +293,6 @@
     animation-name: move;
     animation-duration: 2000ms;
     animation-fill-mode: forwards;
-    display: inline-block;
+    display: inline-flex;
   }
 }
