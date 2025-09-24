@@ -144,12 +144,15 @@
 
 /* 내비게이션 */
 .navigation {
-  background-color: yellow;
+  background-color: #ffc;
   padding-block-end: 100px;
 }
 
 /* 메인 메뉴 */
 .menu {
+  --spacing-base: 16px;
+  --spacing-lg: 20px;
+
   /* background-color: var(--primary);
   background-image: linear-gradient(to bottom, var(--secondary) 0%, var(--primary) 20%, var(--primary) 80%, var(--secondary) 100%); */
   list-style: none;
@@ -162,16 +165,33 @@
 
   .menu-item {
     border-left: 2px solid #fff;
+
+    .menu-button {
+      border: 0;
+      padding: var(--spacing-base) var(--spacing-lg);
+      background: transparent;
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+    }
   }
 
-  .menu-button {
-    border: 0;
-    padding: 8px 20px;
-    background: transparent;
-    font-size: 18px;
-    color: #fff;
-    font-weight: 700;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+  .is-active {
+    .menu-button {
+      color: #ff0 !important;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: calc(100% - (var(--spacing-lg) * 2));
+        background: #000;
+        position: absolute;
+        bottom: -2px;
+      }
+    }
   }
 
   .sub-menu {
