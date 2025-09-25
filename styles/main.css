@@ -420,3 +420,11 @@
     }
   }
 }
+
+/* 웹 관련 용어 */
+.term {
+  background: #ccc linear-gradient(to bottom, #aaa, #ccc, #eee);
+  border: 1px solid #aaa;
+  padding: 16px;
+  border-radius: 5px;
+}
