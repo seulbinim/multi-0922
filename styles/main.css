@@ -29,7 +29,7 @@
 }
 
 .group2 {
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .group3 {
@@ -464,4 +464,9 @@
     font-size: 0.875rem;
     font-weight: 600;
   }
+}
+
+/* 검색 폼 */
+.search {
+  background-color: yellow;
 }
