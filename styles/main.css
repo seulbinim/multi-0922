@@ -429,28 +429,6 @@
   border-radius: 5px;
   line-height: 1.5;
 
-  .term-item:nth-of-type(odd) {
-    background-color: pink !important;
-    padding-left: 76px;
-
-    .term-thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  .term-item:nth-of-type(even) {
-    background-color: lime !important;
-    padding-right: 76px;
-
-    .term-thumbnail {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
-
   .term-title {
     font-size: 0.9375rem;
     font-weight: 700;
@@ -460,6 +438,23 @@
     background-color: yellow;
     margin-top: 12px;
     position: relative;
+    display: flow-root;
+
+    .term-subject,
+    .term-description {
+      float: right;
+      width: calc(100% - 60px);
+      padding-left: 16px;
+    }
+  }
+
+  .term-item:nth-of-type(even) {
+    .term-subject,
+    .term-description {
+      float: left;
+      padding-left: 0;
+      padding-right: 16px;
+    }
   }
 
   .term-subject {
