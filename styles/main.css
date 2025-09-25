@@ -388,3 +388,31 @@
     }
   }
 }
+
+/* 유효성 검사 배너 */
+.validation {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-block: 16px;
+  }
+
+  a {
+    background: url("./../assets/validation_icon.png") no-repeat 16px 50%, linear-gradient(to bottom, #aaa, #ccc, #eee) #ccc;
+    border: 1px solid #aaa;
+    padding: 8px 20px 8px 36px;
+    border-radius: 37px;
+
+    &:hover,
+    &:focus {
+      color: #f00;
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+  }
+}
