@@ -405,6 +405,10 @@
     border: 1px solid #aaa;
     padding: 8px 20px 8px 36px;
     border-radius: 37px;
+    /* 높이를 고정 값으로 사용할 경우 */
+    /* height: 37px; */
+    /* line-height: 37px; */
+    /* align-content: center; */
 
     &:hover,
     &:focus {
