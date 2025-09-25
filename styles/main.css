@@ -490,3 +490,14 @@
     }
   }
 }
+
+/* 공지사항 및 자료실 */
+.board {
+  background: yellow;
+  margin-top: 28px;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
