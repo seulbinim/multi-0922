@@ -193,7 +193,18 @@
             <h2 class="sr-only">검색</h2>
             <form action="/" class="search-form" method="post">
               <div class="form-input">
-                <label for="keyword"><span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span>자료검색</label>
+                <label for="keyword">
+                  <!-- <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span> -->
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.1457 12.56C10.452 12.9971 9.63054 13.25 8.75 13.25C6.26472 13.25 4.25 11.2353 4.25 8.75C4.25 6.26472 6.26472 4.25 8.75 4.25C11.2353 4.25 13.25 6.26472 13.25 8.75C13.25 9.63054 12.9971 10.452 12.56 11.1457L15.4571 14.0429C15.8476 14.4334 15.8476 15.0666 15.4571 15.4571C15.0666 15.8476 14.4334 15.8476 14.0429 15.4571L11.1457 12.56ZM11.25 8.75C11.25 10.1307 10.1307 11.25 8.75 11.25C7.36929 11.25 6.25 10.1307 6.25 8.75C6.25 7.36929 7.36929 6.25 8.75 6.25C10.1307 6.25 11.25 7.36929 11.25 8.75Z"
+                      fill="#181818"
+                    />
+                  </svg>
+                  자료검색</label
+                >
                 <input class="input" type="search" id="keyword" name="searchKeyword" required placeholder="검색어를 입력하세요." />
               </div>
               <button type="submit" class="button button-fill">검색</button>
