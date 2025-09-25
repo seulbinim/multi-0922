@@ -18,3 +18,42 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* 그라디언트 스타일 */
+.gradient-style {
+  background: #ccc linear-gradient(to bottom, #aaa, #ccc, #eee);
+  border: 1px solid #aaa;
+}
+
+/* 한줄 글상자 입력서식 */
+.input {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  min-width: 0;
+  padding: 2px 2px 2px 8px;
+  font-size: 0.8125rem;
+}
+
+/* 버튼 스타일 (Fill) */
+.button {
+  padding: 2px 8px;
+  font-size: 0.875rem;
+  border-radius: 3px;
+  color: #fff;
+
+  &.button-fill {
+    background: #000;
+    border: 1px solid #000;
+  }
+
+  &.button-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid currentColor;
+  }
+
+  &.button-primary {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+  }
+}

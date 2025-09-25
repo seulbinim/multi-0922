@@ -352,21 +352,12 @@
     }
 
     input {
-      border: 1px solid #aaa;
-      border-radius: 3px;
       flex: 1 1 0;
-      min-width: 0;
-      padding: 2px 2px 2px 8px;
-      font-size: 0.8125rem;
     }
 
     button {
       width: 50px;
       aspect-ratio: 1/1;
-      border: 0;
-      padding: 0;
-      background: var(--primary);
-      color: #fff;
       border-radius: 5px;
       position: absolute;
       right: 0;
@@ -423,8 +414,6 @@
 
 /* 웹 관련 용어 */
 .term {
-  background: #ccc linear-gradient(to bottom, #aaa, #ccc, #eee);
-  border: 1px solid #aaa;
   padding: 16px;
   border-radius: 5px;
   line-height: 1.5;
@@ -468,5 +457,27 @@
 
 /* 검색 폼 */
 .search {
-  background-color: yellow;
+  padding: 12px 24px 8px;
+  border-radius: 5px 5px 0 0;
+
+  .search-form {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 8px;
+    align-items: center;
+
+    .form-input {
+      display: contents;
+    }
+
+    label,
+    button {
+      flex: 0 0 max-content;
+    }
+
+    input {
+      flex: 1 1 auto;
+      align-self: stretch;
+    }
+  }
 }
