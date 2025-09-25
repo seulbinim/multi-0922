@@ -25,7 +25,7 @@
 }
 
 .group1 {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .group2 {
@@ -322,9 +322,9 @@
   padding: 15px;
 
   h2 {
-    color: #ff0;
     font-size: 15px;
     font-weight: 700;
+    color: #ff0;
   }
 
   .form-wrapper {
@@ -335,23 +335,29 @@
   }
 
   form {
-    background-color: yellow;
     position: relative;
+    padding-bottom: 5px;
 
     .form-input {
-      margin-bottom: 10px;
+      width: calc(100% - 58px);
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin-bottom: 5px;
     }
 
     label {
-      background: pink;
-      display: inline-block;
-      width: 4em;
+      flex: 0 0 4em;
+      /* white-space: nowrap; */
     }
 
     input {
-      width: 90px;
       border: 1px solid #aaa;
-      border-radius: 5px;
+      border-radius: 3px;
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 2px 2px 2px 8px;
+      font-size: 0.8125rem;
     }
 
     button {
