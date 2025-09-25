@@ -427,4 +427,44 @@
   border: 1px solid #aaa;
   padding: 16px;
   border-radius: 5px;
+  line-height: 1.5;
+
+  .term-item:nth-of-type(odd) {
+    background-color: pink !important;
+    padding-left: 76px;
+
+    .term-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .term-item:nth-of-type(even) {
+    background-color: lime !important;
+    padding-right: 76px;
+
+    .term-thumbnail {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .term-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  .term-item {
+    background-color: yellow;
+    margin-top: 12px;
+    position: relative;
+  }
+
+  .term-subject {
+    color: #296798;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
 }
