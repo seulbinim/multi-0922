@@ -2,6 +2,8 @@
 :root {
   --primary: #d16527;
   --secondary: #edad2d;
+
+  interpolate-size: allow-keywords;
 }
 
 /* 영역 별 색상 및 높이 */
@@ -651,18 +653,65 @@
 
 /* 신규 이벤트 */
 .event {
+  position: relative;
+
+  .button-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  button {
+    width: 18px;
+    aspect-ratio: 1/1;
+    border: 0;
+    padding: 0;
+    background: url("./../assets/back_forward.png") no-repeat;
+
+    &.button-next {
+      background-position: 100% 0;
+    }
+  }
+
+  p {
+    margin-block: 10px;
+
+    img {
+      box-shadow: 5px 5px 0 0 #999;
+    }
+  }
 }
 
 /* 관련 사이트 */
 .related {
-  border-top: 1px solid red;
+  border-top: 1px solid #999;
+  padding-top: 10px;
 
   ul {
+    margin-top: 10px;
     list-style: none;
     padding-left: 0;
     background: #fff;
     border-radius: 5px;
     border: 1px solid #aaa;
+    padding-block: 0;
+    height: 25px;
+    overflow: hidden;
+    /* transition-property: padding-block, height;
+    transition-duration: 400ms;
+    transition-delay: 400ms, 0ms; */
+    transition: height 400ms 0ms, padding-block 400ms 400ms;
+
+    &:hover {
+      padding-block: 10px;
+      height: auto;
+    }
+
+    li {
+      height: 25px;
+      align-content: center;
+      text-indent: 25px;
+    }
   }
 }
 
