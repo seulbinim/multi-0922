@@ -632,11 +632,46 @@
   }
 }
 
+/* 신규 이벤트 및 관련 사이트 */
+.event-related {
+  padding: 12px;
+  border-radius: 5px;
+}
+
+/* 신규 이벤트 및 관련 사이트 제목 공통 */
+.event h2,
+.related h2 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+
+  span {
+    color: var(--primary);
+  }
+}
+
+/* 신규 이벤트 */
+.event {
+}
+
+/* 관련 사이트 */
+.related {
+  border-top: 1px solid red;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+}
+
 /* 인기 사이트 */
 .favorite {
   padding: 12px;
   border-radius: 5px;
   position: relative;
+  margin-top: 28px;
 
   h2 {
     font-size: 0.9375rem;
