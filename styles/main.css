@@ -493,11 +493,68 @@
 
 /* 공지사항 및 자료실 */
 .board {
-  background: yellow;
   margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "tabs more" "list list";
 
   ul {
     list-style: none;
     padding-left: 0;
+  }
+
+  .tab-list {
+    grid-area: tabs;
+    display: flex;
+    flex-flow: row nowrap;
+
+    [role="tab"] {
+      border: 1px solid #aaa;
+      border-radius: 5px 5px 0 0;
+      padding: 6px 10px;
+      color: #555;
+      background: #ccc;
+    }
+
+    [aria-selected="true"] {
+      border-color: currentColor;
+      border-bottom-color: #fff;
+      color: var(--primary);
+      background: #fff;
+    }
+  }
+
+  .panel {
+    display: contents;
+  }
+
+  .panel-list {
+    grid-area: list;
+
+    li {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 16px;
+      margin-block: 8px;
+    }
+
+    a {
+      flex: 1 1 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    time {
+      flex: 0 0 max-content;
+    }
+  }
+
+  .panel-more {
+    grid-area: more;
+
+    span {
+      color: rgb(2, 145, 2);
+    }
   }
 }
