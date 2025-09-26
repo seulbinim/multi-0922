@@ -599,6 +599,10 @@
     font-weight: 700;
   }
 
+  time {
+    grid-area: date;
+  }
+
   p {
     grid-area: description;
     line-height: 1.5;
