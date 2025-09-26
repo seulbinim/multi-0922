@@ -543,6 +543,10 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      span {
+        margin-right: 6px;
+      }
     }
 
     time {

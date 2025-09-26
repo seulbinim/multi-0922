@@ -62,10 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const selected = t === tab;
         t.setAttribute("aria-selected", selected ? "true" : "false");
         panels.forEach((panel) => {
+          // Find panel's ul.panel-list and .panel-more
+          const panelList = panel.querySelector(".panel-list");
+          const panelMore = panel.querySelector(".panel-more");
           if (t.getAttribute("aria-controls") === panel.id && selected) {
-            panel.hidden = false;
+            if (panelList) panelList.removeAttribute("hidden");
+            if (panelMore) panelMore.removeAttribute("hidden");
           } else if (t.getAttribute("aria-controls") === panel.id) {
-            panel.hidden = true;
+            if (panelList) panelList.setAttribute("hidden", "");
+            if (panelMore) panelMore.setAttribute("hidden", "");
           }
         });
       });
@@ -86,16 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
           activateTab(tab);
           e.preventDefault();
         } else if (e.key === "Tab") {
-          // Move focus into the controlled panel
+          // Move focus into the controlled panel's first focusable element
           const panelId = tab.getAttribute("aria-controls");
           const panel = document.getElementById(panelId);
           if (panel) {
-            const focusable = panel.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
-            if (focusable.length > 0) {
-              focusable[0].focus();
-              e.preventDefault();
-              // Store reference to the tab for reverse tabbing
-              focusable[0].__relatedTab = tab;
+            const panelList = panel.querySelector(".panel-list:not([hidden])");
+            if (panelList) {
+              const focusable = panelList.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+              if (focusable.length > 0) {
+                focusable[0].focus();
+                e.preventDefault();
+                focusable[0].__relatedTab = tab;
+              }
             }
           }
         }
@@ -108,24 +115,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 패널 내 첫번째 포커스 요소에서 Shift+Tab 시 탭으로 포커스 이동
     panels.forEach((panel) => {
-      const focusable = panel.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
-      if (focusable.length > 0) {
-        focusable[0].addEventListener("keydown", function (e) {
-          if (e.key === "Tab" && e.shiftKey) {
-            // 원래 탭으로 포커스 이동
-            if (this.__relatedTab) {
-              this.__relatedTab.focus();
-              e.preventDefault();
-            } else {
-              // fallback: find tab by aria-controls
-              const tab = document.querySelector(`[role="tab"][aria-controls="${panel.id}"]`);
-              if (tab) {
-                tab.focus();
+      const panelList = panel.querySelector(".panel-list");
+      if (panelList) {
+        const focusable = panelList.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length > 0) {
+          focusable[0].addEventListener("keydown", function (e) {
+            if (e.key === "Tab" && e.shiftKey) {
+              if (this.__relatedTab) {
+                this.__relatedTab.focus();
                 e.preventDefault();
+              } else {
+                const tab = document.querySelector(`[role="tab"][aria-controls="${panel.id}"]`);
+                if (tab) {
+                  tab.focus();
+                  e.preventDefault();
+                }
               }
             }
-          }
-        });
+          });
+        }
       }
     });
   }
