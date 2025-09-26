@@ -776,7 +776,68 @@
 /* 푸터 */
 .footer-wrapper {
   background: linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 60%, #fff 100%);
+  padding-block: 20px;
 }
 
 .footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "logo guide badge"
+    "logo address badge"
+    "logo copyright badge";
+  gap: 8px 16px;
+  align-items: start;
+
+  .footer-logo {
+    grid-area: logo;
+    align-self: center;
+  }
+
+  .guide-list {
+    grid-area: guide;
+    background: #7b8385;
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 4px 25px;
+    color: #fff;
+    text-transform: uppercase;
+    column-gap: 16px;
+    border-radius: 20px;
+
+    li {
+      flex: 1 1 0;
+    }
+
+    a {
+      text-align: center;
+      padding: 4px 0;
+    }
+  }
+
+  .address {
+    grid-area: address;
+    font-style: normal;
+
+    a {
+      display: inline;
+    }
+  }
+
+  .copyright {
+    grid-area: copyright;
+    font-size: 1em;
+  }
+
+  .badge-container {
+    grid-area: badge;
+    display: flex;
+    flex-flow: row nowrap;
+
+    img {
+      flex: 0;
+    }
+  }
 }
