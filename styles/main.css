@@ -634,5 +634,66 @@
 
 /* 인기 사이트 */
 .favorite {
-  background: yellow;
+  padding: 12px;
+  border-radius: 5px;
+  position: relative;
+
+  h2 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+
+    span {
+      color: var(--primary);
+    }
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: unset;
+    margin-top: 20px;
+
+    li {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      column-gap: 6px;
+      counter-increment: number;
+      margin-top: 8px;
+
+      &::before {
+        content: counter(number);
+        color: #fff;
+        padding: 0px 4px;
+        background: #999;
+        width: 1.25em;
+        border-radius: 3px;
+      }
+    }
+
+    .rank {
+      margin-left: auto;
+      width: 9px;
+      height: 11px;
+      background: url("./../assets/rank.png");
+
+      &.stop {
+        background-position: 0 50%;
+      }
+
+      &.down {
+        background-position: 0 100%;
+      }
+    }
+  }
+
+  .more {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    span {
+      color: rgb(2, 67, 2);
+    }
+  }
 }
