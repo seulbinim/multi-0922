@@ -6,52 +6,6 @@
   interpolate-size: allow-keywords;
 }
 
-/* 영역 별 색상 및 높이 */
-.container {
-  /* background-color: azure; */
-}
-
-.header {
-  /* background-color: pink; */
-  /* height: 10vh; */
-}
-
-.visual {
-  /* background-color: salmon; */
-  /* height: 10vh; */
-}
-
-.main {
-  /* background-color: green; */
-  /* height: 60vh; */
-}
-
-.group1 {
-  /* background-color: yellow; */
-}
-
-.group2 {
-  /* background-color: aqua; */
-}
-
-.group3 {
-  /* background-color: lime; */
-}
-
-.slogan {
-  background-color: blueviolet;
-  height: 10vh;
-}
-
-.footer-wrapper {
-  background-color: silver;
-}
-
-.footer {
-  background-color: gray;
-  height: 10vh;
-}
-
 /* 레이아웃 */
 .header,
 .visual,
@@ -780,4 +734,49 @@
       color: rgb(2, 67, 2);
     }
   }
+}
+
+/* 슬로건 */
+.slogan {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 40px;
+
+  h2 {
+    margin-left: 30px;
+    margin-bottom: -30px;
+    font-size: 15px;
+    width: 110px;
+    height: 83px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    flex: 0 0 auto;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: url("./../assets/coffee.png") no-repeat 0 0 / cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  p {
+    color: #a3a3a3;
+
+    q {
+      display: block;
+    }
+  }
+}
+
+/* 푸터 */
+.footer-wrapper {
+  background: linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 60%, #fff 100%);
+}
+
+.footer {
 }
