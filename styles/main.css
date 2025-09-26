@@ -565,4 +565,65 @@
 
 /* 새소식 */
 .news {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 50px auto auto auto;
+  grid-template-areas:
+    "title more"
+    "thumbnail headline"
+    "thumbnail date"
+    "thumbnail description";
+  column-gap: 16px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 30px;
+    background: linear-gradient(to right, #aaa, #fff) #aaa;
+  }
+
+  h2 {
+    grid-area: title;
+    color: var(--primary);
+    font-size: 0.9375rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    grid-area: headline;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  p {
+    grid-area: description;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  figure {
+    grid-area: thumbnail;
+
+    img {
+      box-shadow: 0 15px 10px 0 #aaa;
+    }
+
+    figcaption {
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  a {
+    grid-area: more;
+    justify-self: end;
+
+    span {
+      color: rgb(2, 67, 2);
+    }
+  }
 }
