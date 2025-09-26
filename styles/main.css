@@ -33,7 +33,7 @@
 }
 
 .group3 {
-  background-color: lime;
+  /* background-color: lime; */
 }
 
 .slogan {
@@ -630,4 +630,9 @@
       color: rgb(2, 67, 2);
     }
   }
+}
+
+/* 인기 사이트 */
+.favorite {
+  background: yellow;
 }
